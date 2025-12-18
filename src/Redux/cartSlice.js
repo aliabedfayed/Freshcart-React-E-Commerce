@@ -61,7 +61,7 @@ export const onlinePayment = createAsyncThunk(
     async (shippingAddress, { getState }) => {
         const { cartId } = getState().cartRed;
 
-        const res = await axiosInstance.post(`/orders/checkout-session/${cartId}?url=http://localhost:5173`, {
+        const res = await axiosInstance.post(`/orders/checkout-session/${cartId}?url=https://freshcart-react-e-commerce.vercel.app`, {
             shippingAddress
         })
         return res.data
